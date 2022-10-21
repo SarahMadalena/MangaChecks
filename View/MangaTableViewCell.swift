@@ -9,13 +9,6 @@ import UIKit
 
 class MangaTableViewCell: UITableViewCell {
     
-    //feito dessa forma por ser opcionl
-    //    var manga: MangasData? {
-    //        didSet {
-    //            configure(data: manga)
-    //        }
-    //    }
-    
     weak var cellDelegate: CellDelegate?
     
     let profileImagesView: UIImageView! = {

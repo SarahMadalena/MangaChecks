@@ -1,5 +1,5 @@
 //
-//  MangaViewController.swift
+//  ViewController.swift
 //  MangaChecks
 //
 //  Created by Sarah Madalena on 21/10/22.
@@ -9,31 +9,17 @@ import UIKit
 
 import SDWebImage
 
-class MangaViewController: UIViewController {
+class SaveMangasViewController: UIViewController {
     
     let mangaTableView = UITableView(frame: .zero, style: .grouped) // view
     
-    var mangas: [MangasData] = []   //chamando a Model
-    
-    var mangaFav: [MangasData] = [] //parametro que vem do delegate
+    var mangaFav: [MangasData] = [] //vem do delegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(mangaTableView)
         
-        let addManga = UIBarButtonItem(title: "Meus Mangás", style: .plain, target: self, action: #selector(playTapped))
-        
-        //faz uma requisição dos mangás para ser passada na minha controller
-        API.makeRequest {
-            //print da lista de array
-            (mangas) in
-            self.mangas = mangas
-            print(mangas)
-            DispatchQueue.main.async {
-                self.mangaTableView.reloadData()
-            }
-        }
-        navigationItem.rightBarButtonItem = addManga
+        mangaTableView.reloadData()
         
         mangaTableView.translatesAutoresizingMaskIntoConstraints = false
         mangaTableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -42,7 +28,7 @@ class MangaViewController: UIViewController {
         mangaTableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
         mangaTableView.dataSource = self
-        mangaTableView.delegate = self
+        mangaTableView.delegate = self //herda do delegate
         
         mangaTableView.register(MangaTableViewCell.self, forCellReuseIdentifier: "mangaCell")
         setUpNavigation()
@@ -51,7 +37,7 @@ class MangaViewController: UIViewController {
     
     //view
     func setUpNavigation() {
-        navigationItem.title = "Mangás"
+        navigationItem.title = "Meus Mangás"
         navigationController?.navigationBar.prefersLargeTitles = true
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithOpaqueBackground()
@@ -67,22 +53,15 @@ class MangaViewController: UIViewController {
         self.navigationController?.navigationBar.scrollEdgeAppearance = coloredAppearance
         self.navigationController?.navigationBar.compactAppearance = coloredAppearance
     }
-    
-    @objc func playTapped(sender:UIBarButtonItem){
-        let vc = SaveMangasViewController()
-        vc.mangaFav = mangaFav
-        self.show(vc, sender: self)
-    }
 }
 
-//controller
-extension MangaViewController: UITableViewDataSource {
+extension SaveMangasViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mangas.count
+        return mangaFav.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let currentManga = mangas[indexPath.row]
+        let currentManga = mangaFav[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "mangaCell", for: indexPath) as! MangaTableViewCell
         cell.configure(with: currentManga)
         cell.cellDelegate = self
@@ -90,13 +69,13 @@ extension MangaViewController: UITableViewDataSource {
     }
 }
 
-extension MangaViewController: UITableViewDelegate {
+extension SaveMangasViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
 }
 
-extension MangaViewController: CellDelegate {
+extension SaveMangasViewController: CellDelegate {
     func addManga(with manga: MangasData) {
         self.mangaFav.append(manga)
         print(mangaFav.count)
