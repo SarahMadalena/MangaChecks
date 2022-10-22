@@ -21,6 +21,8 @@
 		D199F9072902CCBE000EA2A4 /* MangaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199F9062902CCBE000EA2A4 /* MangaViewController.swift */; };
 		D199F9092902CD05000EA2A4 /* ResultMangasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199F9082902CD05000EA2A4 /* ResultMangasModel.swift */; };
 		D199F90C2902CD45000EA2A4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D199F90B2902CD45000EA2A4 /* SDWebImage */; };
+		D199F91029036F42000EA2A4 /* PersonalManga+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199F90E29036F42000EA2A4 /* PersonalManga+CoreDataClass.swift */; };
+		D199F91129036F42000EA2A4 /* PersonalManga+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199F90F29036F42000EA2A4 /* PersonalManga+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		D199F9042902CC77000EA2A4 /* MangaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaTableViewCell.swift; sourceTree = "<group>"; };
 		D199F9062902CCBE000EA2A4 /* MangaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaViewController.swift; sourceTree = "<group>"; };
 		D199F9082902CD05000EA2A4 /* ResultMangasModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMangasModel.swift; sourceTree = "<group>"; };
+		D199F90E29036F42000EA2A4 /* PersonalManga+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalManga+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D199F90F29036F42000EA2A4 /* PersonalManga+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalManga+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 		D199F8BF2902CBA3000EA2A4 = {
 			isa = PBXGroup;
 			children = (
+				D199F90D29030D06000EA2A4 /* CoreData */,
 				D199F8FE2902CC08000EA2A4 /* Model */,
 				D199F8FF2902CC10000EA2A4 /* Controller */,
 				D199F9012902CC27000EA2A4 /* View */,
@@ -118,7 +123,6 @@
 				D199F8D72902CBA4000EA2A4 /* Assets.xcassets */,
 				D199F8D92902CBA4000EA2A4 /* LaunchScreen.storyboard */,
 				D199F8DC2902CBA4000EA2A4 /* Info.plist */,
-				D199F8D42902CBA3000EA2A4 /* MangaChecks.xcdatamodeld */,
 			);
 			path = MangaChecks;
 			sourceTree = "<group>";
@@ -143,6 +147,8 @@
 		D199F8FE2902CC08000EA2A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D199F90E29036F42000EA2A4 /* PersonalManga+CoreDataClass.swift */,
+				D199F90F29036F42000EA2A4 /* PersonalManga+CoreDataProperties.swift */,
 				D199F9082902CD05000EA2A4 /* ResultMangasModel.swift */,
 			);
 			path = Model;
@@ -171,6 +177,14 @@
 				D199F9042902CC77000EA2A4 /* MangaTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D199F90D29030D06000EA2A4 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D199F8D42902CBA3000EA2A4 /* MangaChecks.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,10 +325,12 @@
 			files = (
 				D199F9052902CC77000EA2A4 /* MangaTableViewCell.swift in Sources */,
 				D199F9092902CD05000EA2A4 /* ResultMangasModel.swift in Sources */,
+				D199F91129036F42000EA2A4 /* PersonalManga+CoreDataProperties.swift in Sources */,
 				D199F8D02902CBA3000EA2A4 /* SaveMangasController.swift in Sources */,
 				D199F8D62902CBA3000EA2A4 /* MangaChecks.xcdatamodeld in Sources */,
 				D199F8CC2902CBA3000EA2A4 /* AppDelegate.swift in Sources */,
 				D199F8CE2902CBA3000EA2A4 /* SceneDelegate.swift in Sources */,
+				D199F91029036F42000EA2A4 /* PersonalManga+CoreDataClass.swift in Sources */,
 				D199F9072902CCBE000EA2A4 /* MangaViewController.swift in Sources */,
 				D199F9032902CC41000EA2A4 /* API.swift in Sources */,
 			);
