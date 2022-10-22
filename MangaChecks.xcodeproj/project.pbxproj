@@ -23,6 +23,7 @@
 		D199F90C2902CD45000EA2A4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D199F90B2902CD45000EA2A4 /* SDWebImage */; };
 		D199F91029036F42000EA2A4 /* PersonalManga+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199F90E29036F42000EA2A4 /* PersonalManga+CoreDataClass.swift */; };
 		D199F91129036F42000EA2A4 /* PersonalManga+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199F90F29036F42000EA2A4 /* PersonalManga+CoreDataProperties.swift */; };
+		D199F91329049DBC000EA2A4 /* CoreDataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199F91229049DBC000EA2A4 /* CoreDataMethods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		D199F9082902CD05000EA2A4 /* ResultMangasModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMangasModel.swift; sourceTree = "<group>"; };
 		D199F90E29036F42000EA2A4 /* PersonalManga+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalManga+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D199F90F29036F42000EA2A4 /* PersonalManga+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalManga+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D199F91229049DBC000EA2A4 /* CoreDataMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMethods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				D199F90E29036F42000EA2A4 /* PersonalManga+CoreDataClass.swift */,
 				D199F90F29036F42000EA2A4 /* PersonalManga+CoreDataProperties.swift */,
 				D199F9082902CD05000EA2A4 /* ResultMangasModel.swift */,
+				D199F91229049DBC000EA2A4 /* CoreDataMethods.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				D199F8CE2902CBA3000EA2A4 /* SceneDelegate.swift in Sources */,
 				D199F91029036F42000EA2A4 /* PersonalManga+CoreDataClass.swift in Sources */,
 				D199F9072902CCBE000EA2A4 /* MangaViewController.swift in Sources */,
+				D199F91329049DBC000EA2A4 /* CoreDataMethods.swift in Sources */,
 				D199F9032902CC41000EA2A4 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

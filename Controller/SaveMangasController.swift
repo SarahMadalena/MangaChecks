@@ -14,10 +14,15 @@ class SaveMangasViewController: UIViewController {
     let mangaTableView = UITableView(frame: .zero, style: .grouped) // view
     
     var mangaFav: [MangasData] = [] //vem do delegate
+    var mangaCoreData: [PersonalManga] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(mangaTableView)
+        mangaCoreData = CoreDataStack.shared.fetchMangaEntity()
+        print(mangaCoreData)
+        
+        //retorna um array de PersonalManga
         
         mangaTableView.reloadData()
         
@@ -55,7 +60,7 @@ class SaveMangasViewController: UIViewController {
     }
 }
 
-extension SaveMangasViewController: UITableViewDataSource {
+extension SaveMangasViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mangaFav.count
     }
@@ -64,7 +69,6 @@ extension SaveMangasViewController: UITableViewDataSource {
         let currentManga = mangaFav[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "mangaCell", for: indexPath) as! MangaTableViewCell
         cell.configure(with: currentManga)
-        cell.cellDelegate = self
         return cell
     }
 }
@@ -72,12 +76,5 @@ extension SaveMangasViewController: UITableViewDataSource {
 extension SaveMangasViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
-    }
-}
-
-extension SaveMangasViewController: CellDelegate {
-    func addManga(with manga: MangasData) {
-        self.mangaFav.append(manga)
-        print(mangaFav.count)
     }
 }

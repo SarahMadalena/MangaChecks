@@ -100,5 +100,15 @@ extension MangaViewController: CellDelegate {
     func addManga(with manga: MangasData) {
         self.mangaFav.append(manga)
         print(mangaFav.count)
+        //criando entidade
+        _ = CoreDataStack.shared.createMangaEntity(mangaData: manga) //singleton
+        
+        do {
+            try CoreDataStack.shared.context.save()
+        }
+        catch {
+            print("não salvou")
+        }
+        
     }
 }
