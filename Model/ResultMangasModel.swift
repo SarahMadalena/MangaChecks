@@ -12,15 +12,16 @@ struct Result: Decodable {
 }
 
 struct MangasData: Codable {
-    let mal_id: Int
+    let malID: Int //criar exceção
     let images: Images
     let title: String
-//    let status: String
-//    let prop: Prop?
-//    let synopsis: String
-//    let authors: [Author]
     let genres: [Genre]
-//    let demographics: [Demographic]
+    
+    enum CodingKeys: String, CodingKey {
+        case malID = "mal_id"
+        case images, title
+        case genres
+    }
 }
 
 struct Images: Codable {
@@ -29,24 +30,11 @@ struct Images: Codable {
 }
 
 struct ImageFormat: Codable {
-    let image_url: String?
+    let imageURL: String?
+    enum CodingKeys: String, CodingKey {
+        case imageURL = "image_url"
+    }
 }
-
-//struct Prop: Codable {
-//    let mangaYear: MangaYear
-//}
-//
-//struct MangaYear: Codable {
-//    let year: Int
-//}
-//
-//struct Author: Codable {
-//    let name: String
-//}
 struct Genre: Codable {
     let name: String
 }
-
-//struct Demographic: Codable {
-//    let name: String
-//}

@@ -9,8 +9,6 @@
 import Foundation
 import CoreData
 
-//subclasse de ResultMangasModel
-@objc(PersonalManga)
+@objc(PersonalManga) //subclasse de ResultMangasModel
 public class PersonalManga: NSManagedObject {
-
 }
